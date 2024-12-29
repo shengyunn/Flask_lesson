@@ -1,13 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
     <div class="content-section">
+        <!-- 密碼重設表單開始 -->
         <form method="POST" action="">
+            <!-- CSRF 防護標籤 -->
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
+                <!-- 表單標題 -->
                 <legend class="border-bottom mb-4">Reset Password</legend>
+                <!-- 電子郵件輸入欄位 -->
                 <div class="form-group">
                     {{ form.email.label(class="form-control-label") }}
                     {% if form.email.errors %}
+                        <!-- 顯示錯誤訊息 -->
                         {{ form.email(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
                             {% for error in form.email.errors %}
@@ -15,10 +20,12 @@
                             {% endfor %}
                         </div>
                     {% else %}
+                        <!-- 顯示正常輸入欄位 -->
                         {{ form.email(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
             </fieldset>
+            <!-- 提交按鈕 -->
             <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info") }}
             </div>

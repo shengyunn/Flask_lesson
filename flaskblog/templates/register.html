@@ -1,10 +1,14 @@
 {% extends "layout.html" %}
 {% block content %}
     <div class="content-section">
+        <!-- 註冊表單開始 -->
         <form method="POST" action="">
+            <!-- CSRF 防護標籤 -->
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
+                <!-- 表單標題 -->
                 <legend class="border-bottom mb-4">Join Today</legend>
+                <!-- 使用者名稱輸入欄位 -->
                 <div class="form-group">
                     {{ form.username.label(class="form-control-label") }}
 
@@ -19,6 +23,7 @@
                         {{ form.username(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+                <!-- 電子郵件輸入欄位 -->
                 <div class="form-group">
                     {{ form.email.label(class="form-control-label") }}
                     {% if form.email.errors %}
@@ -32,6 +37,7 @@
                         {{ form.email(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+                <!-- 密碼輸入欄位 -->
                 <div class="form-group">
                     {{ form.password.label(class="form-control-label") }}
                     {% if form.password.errors %}
@@ -45,6 +51,7 @@
                         {{ form.password(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+                <!-- 確認密碼輸入欄位 -->
                 <div class="form-group">
                     {{ form.confirm_password.label(class="form-control-label") }}
                     {% if form.confirm_password.errors %}
@@ -59,11 +66,13 @@
                     {% endif %}
                 </div>
             </fieldset>
+            <!-- 提交按鈕 -->
             <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info") }}
             </div>
         </form>
     </div>
+    <!-- 登入連結 -->
     <div class="border-top pt-3">
         <small class="text-muted">
             Already Have An Account? <a class="ml-2" href="{{ url_for('users.login') }}">Sign In</a>

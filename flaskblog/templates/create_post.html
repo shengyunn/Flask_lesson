@@ -1,13 +1,19 @@
 {% extends "layout.html" %}
 {% block content %}
+<!-- 繼承 layout.html 模板 -->
 <div class="content-section">
+    <!-- 表單開始，使用 POST 方法和多部分編碼 -->
     <form method="POST" action="">
+        <!-- 隱藏標籤，用於 CSRF 防護 -->
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
+            <!-- 表單標題動態顯示，根據傳入的 legend 值設置 -->
             <legend class="border-bottom mb-4">{{ legend }}</legend>
+            <!-- 標題輸入欄位 -->
             <div class="form-group">
                 {{ form.title.label(class="form-control-label") }}
                 {% if form.title.errors %}
+                    <!-- 如果有錯誤，顯示錯誤樣式 -->
                     {{ form.title(class="form-control form-control-lg is-invalid") }}
                     <div class="invalid-feedback">
                         {% for error in form.title.errors %}
@@ -15,12 +21,15 @@
                         {% endfor %}
                     </div>
                 {% else %}
+                    <!-- 如果沒有錯誤，顯示正常樣式 -->
                     {{ form.title(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
+            <!-- 內容輸入欄位 -->
             <div class="form-group">
                 {{ form.content.label(class="form-control-label") }}
                 {% if form.content.errors %}
+                    <!-- 如果有錯誤，顯示錯誤樣式 -->
                     {{ form.content(class="form-control form-control-lg is-invalid") }}
                     <div class="invalid-feedback">
                         {% for error in form.content.errors %}
@@ -28,10 +37,12 @@
                         {% endfor %}
                     </div>
                 {% else %}
+                    <!-- 如果沒有錯誤，顯示正常樣式 -->
                     {{ form.content(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
         </fieldset>
+        <!-- 提交按鈕 -->
         <div class="form-group">
             {{ form.submit(class="btn btn-outline-info") }}
         </div>

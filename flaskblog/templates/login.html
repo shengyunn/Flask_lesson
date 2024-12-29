@@ -1,10 +1,14 @@
 {% extends "layout.html" %}
 {% block content %}
     <div class="content-section">
+        <!-- 登入表單 -->
         <form method="POST" action="">
+            <!-- CSRF 防護標籤 -->
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
+                <!-- 表單標題 -->
                 <legend class="border-bottom mb-4">Log In</legend>
+                <!-- 電子郵件欄位 -->
                 <div class="form-group">
                     {{ form.email.label(class="form-control-label") }}
                     {% if form.email.errors %}
@@ -18,6 +22,7 @@
                         {{ form.email(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+                <!-- 密碼欄位 -->
                 <div class="form-group">
                     {{ form.password.label(class="form-control-label") }}
                     {% if form.password.errors %}
@@ -31,11 +36,13 @@
                         {{ form.password(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+                <!-- 記住我選項 -->
                 <div class="form-check">
                     {{ form.remember(class="form-check-input") }}
                     {{ form.remember.label(class="form-check-label") }}
                 </div>
             </fieldset>
+            <!-- 提交按鈕與忘記密碼連結 -->
             <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info") }}
                 <small class="text-muted ml-2">
@@ -44,6 +51,7 @@
             </div>
         </form>
     </div>
+    <!-- 註冊連結 -->
     <div class="border-top pt-3">
         <small class="text-muted">
             Need An Account? <a class="ml-2" href="{{ url_for('users.register') }}">Sign Up Now</a>
