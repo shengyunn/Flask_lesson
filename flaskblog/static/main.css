@@ -1,80 +1,92 @@
+/* 設置全局樣式 */
 body {
-  background: #fafafa;
-  color: #333333;
-  margin-top: 5rem;
+  background: #fafafa; /* 設置背景顏色為淡灰色 */
+  color: #333333; /* 設置全局文字顏色為深灰色 */
+  margin-top: 5rem; /* 頁面頂部外邊距為 5rem */
 }
 
+/* 設置標題樣式 */
 h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+  color: #444444; /* 設置標題顏色為較深灰色 */
 }
 
+/* 設置自定義背景顏色 */
 .bg-steel {
-  background-color: #5f788a;
+  background-color: #5f788a; /* 設置背景顏色為鋼鐵藍灰色 */
 }
 
+/* 設置導航列樣式 */
 .site-header .navbar-nav .nav-link {
-  color: #cbd5db;
+  color: #cbd5db; /* 設置連結顏色為淺灰藍色 */
 }
 
 .site-header .navbar-nav .nav-link:hover {
-  color: #ffffff;
+  color: #ffffff; /* 滑鼠懸停時設置連結顏色為白色 */
 }
 
 .site-header .navbar-nav .nav-link.active {
-  font-weight: 500;
+  font-weight: 500; /* 設置活動連結字體加粗 */
 }
 
+/* 設置內容區塊樣式 */
 .content-section {
-  background: #ffffff;
-  padding: 10px 20px;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
-  margin-bottom: 20px;
+  background: #ffffff; /* 設置背景顏色為白色 */
+  padding: 10px 20px; /* 設置內邊距為上下 10px、左右 20px */
+  border: 1px solid #dddddd; /* 設置邊框為淡灰色 */
+  border-radius: 3px; /* 設置圓角邊框半徑為 3px */
+  margin-bottom: 20px; /* 設置底部外邊距為 20px */
 }
 
+/* 設置文章標題樣式 */
 .article-title {
-  color: #444444;
+  color: #444444; /* 設置標題顏色為深灰色 */
 }
 
 a.article-title:hover {
-  color: #428bca;
-  text-decoration: none;
+  color: #428bca; /* 滑鼠懸停時設置顏色為藍色 */
+  text-decoration: none; /* 去掉下劃線效果 */
 }
 
+/* 設置文章內容樣式 */
 .article-content {
-  white-space: pre-line;
+  white-space: pre-line; /* 保持文字換行格式 */
 }
 
+/* 設置文章圖片樣式 */
 .article-img {
-  height: 65px;
-  width: 65px;
-  margin-right: 16px;
+  height: 65px; /* 設置圖片高度為 65px */
+  width: 65px; /* 設置圖片寬度為 65px */
+  margin-right: 16px; /* 設置右邊距為 16px */
 }
 
+/* 設置文章元數據樣式 */
 .article-metadata {
-  padding-bottom: 1px;
-  margin-bottom: 4px;
-  border-bottom: 1px solid #e3e3e3
+  padding-bottom: 1px; /* 設置底部內邊距為 1px */
+  margin-bottom: 4px; /* 設置底部外邊距為 4px */
+  border-bottom: 1px solid #e3e3e3; /* 添加底部邊框 */
 }
 
 .article-metadata a:hover {
-  color: #333;
-  text-decoration: none;
+  color: #333; /* 滑鼠懸停時設置顏色為深灰色 */
+  text-decoration: none; /* 去掉下劃線效果 */
 }
 
+/* 設置 SVG 圖示樣式 */
 .article-svg {
-  width: 25px;
-  height: 25px;
-  vertical-align: middle;
+  width: 25px; /* 設置寬度為 25px */
+  height: 25px; /* 設置高度為 25px */
+  vertical-align: middle; /* 垂直居中對齊 */
 }
 
+/* 設置帳戶圖片樣式 */
 .account-img {
-  height: 125px;
-  width: 125px;
-  margin-right: 20px;
-  margin-bottom: 16px;
+  height: 125px; /* 設置圖片高度為 125px */
+  width: 125px; /* 設置圖片寬度為 125px */
+  margin-right: 20px; /* 設置右邊距為 20px */
+  margin-bottom: 16px; /* 設置底部邊距為 16px */
 }
 
+/* 設置帳戶標題樣式 */
 .account-heading {
-  font-size: 2.5rem;
+  font-size: 2.5rem; /* 設置標題字體大小為 2.5rem */
 }

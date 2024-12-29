@@ -6,9 +6,10 @@ from flaskblog.users.forms import (RegistrationForm, LoginForm, UpdateAccountFor
                                    RequestResetForm, ResetPasswordForm)
 from flaskblog.users.utils import save_picture, send_reset_email
 
+# 建立 'users' Blueprint
 users = Blueprint('users', __name__)
 
-
+# 使用者註冊路由
 @users.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
@@ -23,7 +24,7 @@ def register():
         return redirect(url_for('users.login'))
     return render_template('register.html', title='Register', form=form)
 
-
+# 使用者登入路由
 @users.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -39,13 +40,13 @@ def login():
             flash('Login Unsuccessful. Please check email and password', 'danger')
     return render_template('login.html', title='Login', form=form)
 
-
+# 使用者登出路由
 @users.route("/logout")
 def logout():
     logout_user()
     return redirect(url_for('main.home'))
 
-
+# 更新帳戶資訊路由
 @users.route("/account", methods=['GET', 'POST'])
 @login_required
 def account():
@@ -66,7 +67,7 @@ def account():
     return render_template('account.html', title='Account',
                            image_file=image_file, form=form)
 
-
+# 查看特定使用者的文章
 @users.route("/user/<string:username>")
 def user_posts(username):
     page = request.args.get('page', 1, type=int)
@@ -76,7 +77,7 @@ def user_posts(username):
         .paginate(page=page, per_page=5)
     return render_template('user_posts.html', posts=posts, user=user)
 
-
+# 密碼重設請求路由
 @users.route("/reset_password", methods=['GET', 'POST'])
 def reset_request():
     if current_user.is_authenticated:
@@ -89,7 +90,7 @@ def reset_request():
         return redirect(url_for('users.login'))
     return render_template('reset_request.html', title='Reset Password', form=form)
 
-
+# 密碼重設 Token 驗證路由
 @users.route("/reset_password/<token>", methods=['GET', 'POST'])
 def reset_token(token):
     if current_user.is_authenticated:
